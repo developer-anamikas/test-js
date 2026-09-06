@@ -64,7 +64,9 @@
 
 
 
-// //DATATYPES CONVERSION
+// /********* DATATYPES CONVERSION  *******/
+
+
 
 //         /* name -> number types */
 // let name ="Anamika"
@@ -104,13 +106,14 @@
 
 //     /* "Anamika" → NaN
 //     1234 → 1234
-//     "" → 0
+//     "" → 0 (E)
 //     null → 0
 //     "abc888" → NaN
 //     undefined → NaN
-//     true → 1
+//     true → 1 
 //     false → 0*/
 
+    /* name -> boolean types */
 // let value1=1
 // let convertToBoolean= Boolean(value1)
 // console.log(convertToBoolean)
@@ -144,7 +147,94 @@
 // "Anamika" → true
 // 0 → false */
 
+    /* name -> String types */
 // let value2=33
 // let convetToString= String(value2)
 // console.log(typeof convetToString)
 // console.log(convetToString)
+
+
+// /******************operations **********/
+// let value = 3
+// let negValue = -value
+// // console.log(negValue);
+
+// // console.log(2+2);
+// // console.log(2-2);
+// // console.log(2*2);
+// // console.log(2**3);
+// // console.log(2/3);
+// // console.log(2%3);
+
+// console.log(1+2);
+// console.log("3"+1+2);
+// console.log(1+2+"3");
+
+// let str1 = "hello"
+// let str2 = " hitesh"
+
+// let str3 = str1 + str2
+// console.log(str3);
+
+// console.log((3 + 4) * 5 % 3);
+
+// console.log(true);
+// console.log(+true);
+// console.log(+"");
+
+
+// // true -> true
+// // +true -> 0
+// // +"" -> 0
+
+// let num1,num2,num3
+// num1 = num2 = num3 = 2 + 2
+
+// console.log([num1,num2,num3]);
+
+// let gameCounter = 100
+// ++gameCounter;
+// console.log(gameCounter);
+
+
+
+// /*****************Again DATATYPES */
+
+// console.log(2 > 1);
+// console.log(2 >= 1);
+// console.log(2 < 1);
+// console.log(2 == 1);
+// console.log(2 != 1);
+
+//             // DONT USE THESE AFLTUS!!!!
+
+// console.log("2" > 1);
+// console.log("02" > 1);
+
+// console.log(null > 0);
+// console.log(null == 0);
+// console.log(null >= 0);
+// // Relational comparison (>, <, >=, <=):
+// // null is treated as 0.
+// // null > 0  → false (0 > 0 is false)
+// // null >= 0 → true  (0 >= 0 is true)
+
+// // Loose equality (==):
+// // null == undefined → true
+// // null == 0         → false
+// // null == null      → true
+
+// console.log(undefined==0);
+// console.log(undefined>=0);
+// console.log(undefined<0);
+
+// // Any comparison with NaN gives false.
+// //
+// // undefined == 0 → false
+// // undefined > 0  → false
+// // undefined < 0  → false
+
+// // "==="    (STRICTYLY CHECK THE DATATYPES)
+// console.log("2" ===2);
+
+
