@@ -1,5 +1,5 @@
-// // const tinderUser= new Object();  //singleton
-// // console.log(tinderUser);
+// const tinderUser= new Object();  //singleton
+// console.log(tinderUser);
 
 // const tinderUser1= {}           //non -singleton
 // console.log(tinderUser1);
@@ -57,4 +57,25 @@
 
 // console.log(Object.keys(tinderUser1));   //access the total keys 
 // console.log(Object.values(tinderUser1));     //access the total values
-// console.log(Object.entriesntries(tinderUser1));      //access key value part in array
+// console.log(Object.entries(tinderUser1));      //access key value part in array
+// console.log(tinderUser1.hasOwnProperty('booleanV'));                //does it has the key inside
+
+
+
+
+// /**************Object part 2*************/
+
+// const coursename={
+//     course:"Chai aur code",
+//     credits:3,
+//     teacherName:"Hitesh",
+// }
+
+// console.log(coursename.course);
+
+// const {teacherName} = coursename                //one time declarartion so that i always dont have to the coursename.course
+// console.log(teacherName);
+
+// const {teacherName:faculty} =coursename         //deconstruct used to shorten the key name in order to have ease to access 
+// console.log(faculty);
+
