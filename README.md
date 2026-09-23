@@ -1,2 +1,2 @@
 # test-js
-A trial code run in js
+A journey to learn js
