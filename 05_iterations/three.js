@@ -32,4 +32,27 @@
 //     console.log(key, ':-', value);
 // }
 
+//Objects are not iteratable using forof
+
+// const myObject = {
+//     game1: 'NFS',
+//     game2: 'Spiderman'
+// }
+
+// for (const [key, value] of myObject) {
+//     console.log(key, ':-', value);
+// }
+
+
+// //Map not works out ofr forin
+// const map = new Map()
+// map.set('IN',"INDIA")                    
+// map.set('USA',"USA")
+// map.set('Fr',"France")
+// map.set('IN',"INDIA")    
+// // console.log(map)
+
+// for (const key in map) {                
+//     console.log(key);
+// }
 
