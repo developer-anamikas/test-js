@@ -21,12 +21,12 @@
 // console.log(newNums);
 
 
-const myNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// const myNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-// const newNums = myNumers.map((num) => { return num + 10 })
+// // const newNums = myNumers.map((num) => { return num + 10 })
 
-//CHAINING
-const newNums= myNumbers.map( (num)=> num *10 )     //The result is passed to next chain  
-                        .map( (num)=> num+1 )       //opeartion is performed on its prev chain
-                        .map( (num)=> num>=40 )
-console.log(newNums)
+// //CHAINING
+// const newNums= myNumbers.map( (num)=> num *10 )     //The result is passed to next chain  
+//                         .map( (num)=> num+1 )       //opeartion is performed on its prev chain
+//                         .map( (num)=> num>=40 )
+// console.log(newNums)
