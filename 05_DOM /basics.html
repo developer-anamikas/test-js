@@ -6,16 +6,548 @@
 //https://chatgpt.com/s/t_6ab7d601c9e4819195310374b023fa37
 
 
+//
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DOM learning</title>
+    <style>
+        .bg-black{
+            background-color: black;
+            color: #fff ;
+        }
+    </style>
 </head>
-<body>
-    //DOM is the browser's representation of your HTML page
-    as a collection of objects that JavaScript can access and manipulate.
-    
+<body class="bg-black">
+    <!-- //DOM is the browser's representation of your HTML page
+    as a collection of objects that JavaScript can access and manipulate. -->
+    <div >
+        <p>Loream ipsum dolor sit amet.</p>   <!-- //first-child of parent -->
+        <h1 id="title" class="heading">
+            DOM learning on Chai aur Code <span style="display: none;">INVISBLE</span>
+        </h1>
+        <p>Loream ipsum dolor sit amet.</p>
+        <p>Loream ipsum dolor sit amet.</p>
+        <h2>oream ipsum dolor sit amet</h2>
+        <h2>oream ipsum dolor sit amet</h2>
+        <h2>oream ipsum dolor sit amet</h2>
+        <input type="password" >
+    </div>
 </body>
 </html>
+
+<!-- =========================================================
+     DOM: ACCESSING, MODIFYING ATTRIBUTES, CHANGING CSS,
+     ACCESSING CONTENT & SELECTING ELEMENTS
+     ========================================================= -->
+
+
+<!--
+1. document.getElementById("title").className
+
+   - getElementById("title") → finds the element whose ID is "title"
+   - className → DOM property
+   - Returns the value of the class attribute.
+
+   Example:
+   <h1 id="title" class="heading">
+
+   Result:
+   "heading"
+-->
+
+
+<!--
+2. document.getElementById("title").id
+
+   - id → DOM property
+   - Returns the value of the id attribute.
+
+   Example:
+   <h1 id="title">
+
+   Result:
+   "title"
+-->
+
+
+<!--
+3. document.getElementById("title").class
+
+   - "class" is an HTML attribute.
+   - There is no standard "class" DOM property.
+   - Therefore, it returns:
+
+   undefined
+
+   Use .className instead.
+-->
+
+
+<!--
+4. document.getElementById("title").getAttribute()
+
+   - getAttribute() → DOM method
+   - Used to READ the value of an HTML attribute.
+   - It needs the attribute name as an argument.
+
+   Example:
+   getAttribute("id")
+   getAttribute("class")
+-->
+
+
+<!--
+5. document.getElementById("title").getAttribute("id")
+
+   - Reads the value of the "id" HTML attribute.
+
+   Example:
+   <h1 id="title">
+
+   Result:
+   "title"
+-->
+
+
+<!--
+6. document.getElementById("title").getAttribute("class")
+
+   - Reads the value of the "class" HTML attribute.
+
+   Example:
+   <h1 class="heading">
+
+   Result:
+   "heading"
+-->
+
+
+<!--
+7. document.getElementById("title").setAttribute("class", "test heading")
+
+   - setAttribute() → DOM method
+   - Used to SET / CHANGE an HTML attribute.
+
+   "class" → attribute to change
+   "test heading" → new value
+
+   Before:
+   <h1 class="heading">
+
+   After:
+   <h1 class="test heading">
+
+   IMPORTANT:
+   setAttribute() changes the element but returns undefined.
+-->
+
+
+<!--
+8. const title = document.getElementById("title")
+
+   - document.getElementById("title") → finds the element
+   - const title → stores that DOM element in a variable
+
+   Now instead of writing:
+   document.getElementById("title")
+
+   every time, we can simply write:
+   title
+
+   Example:
+   title.className
+   title.id
+   title.getAttribute("class")
+-->
+
+
+<!-- =========================================================
+     DOM: CHANGING CSS USING JAVASCRIPT
+     ========================================================= -->
+
+
+<!--
+9. title.style.backgroundColor = "green"
+
+   - title → DOM element stored in the variable
+   - style → DOM property used to access/modify inline CSS
+   - backgroundColor → CSS property
+   - "green" → new CSS value
+
+   Changes the background color of the element to green.
+
+   CSS:
+   background-color: green;
+
+   JavaScript uses camelCase:
+   backgroundColor
+-->
+
+
+<!--
+10. title.style.padding = "15px"
+
+    - style → DOM property
+    - padding → CSS property
+    - "15px" → value
+
+    Adds 15px of padding to the element.
+
+    CSS:
+    padding: 15px;
+-->
+
+
+<!--
+11. title.style.borderRadius = "15px"
+
+    - style → DOM property
+    - borderRadius → CSS property
+    - "15px" → value
+
+    Makes the corners of the element rounded.
+
+    CSS:
+    border-radius: 15px;
+
+    JavaScript uses camelCase:
+    borderRadius
+-->
+
+
+<!-- =========================================================
+     DOM: ACCESSING ELEMENT CONTENT
+     ========================================================= -->
+
+
+<!--
+12. title.textContent
+
+    - textContent → DOM property
+    - Gets ALL the text content inside the element.
+    - It includes text that may be hidden using CSS.
+
+    Example:
+    <h1 id="title">
+        Hello <span>World</span>
+    </h1>
+
+    Result:
+    "Hello World"
+
+    It reads only TEXT, not HTML tags.
+-->
+
+
+<!--
+13. title.innerHTML
+
+    - innerHTML → DOM property
+    - Gets the HTML content inside the element.
+    - It includes HTML tags.
+
+    Example:
+    <h1 id="title">
+        Hello <span>World</span>
+    </h1>
+
+    Result:
+    "Hello <span>World</span>"
+
+    It reads both TEXT and HTML tags.
+-->
+
+
+<!--
+14. title.innerText
+
+    - innerText → DOM property
+    - Gets the visible text displayed to the user.
+    - It generally ignores text that is hidden by CSS.
+
+    Example:
+    <h1 id="title">
+        Hello <span style="display: none;">World</span>
+    </h1>
+
+    Result:
+    "Hello"
+
+    Because "World" is hidden.
+-->
+
+
+<!-- =========================================================
+     DOM: querySelector()
+     ========================================================= -->
+
+
+<!--
+15. document.querySelector("h1")
+
+    - querySelector() → DOM method
+    - Used to SELECT the FIRST element that matches a CSS selector.
+
+    "h1" → element/tag selector
+
+    Example:
+    <h1 id="title">Hello</h1>
+
+    Result:
+    The <h1> element
+-->
+
+
+<!--
+16. document.querySelector("#title")
+
+    - querySelector() → DOM method
+    - "#title" → ID selector
+    - # means "select by ID"
+
+    Example:
+    <h1 id="title">Hello</h1>
+
+    Result:
+    The element whose ID is "title"
+-->
+
+
+<!--
+17. document.querySelector(".heading")
+
+    - querySelector() → DOM method
+    - ".heading" → class selector
+    - . means "select by class"
+
+    Example:
+    <h1 class="heading">Hello</h1>
+
+    Result:
+    The FIRST element having class "heading"
+-->
+
+
+<!--
+18. document.querySelector('input[type="password"]')
+
+    - querySelector() → DOM method
+    - Uses CSS selector syntax.
+
+    input
+    → selects an <input> element
+
+    [type="password"]
+    → selects an input whose type attribute is "password"
+
+    Example:
+    <input type="password">
+
+    Result:
+    The <input type="password"> element
+
+
+    IMPORTANT:
+
+    [type="password"]
+    → this is called an ATTRIBUTE SELECTOR.
+
+    Example:
+
+    input[type="text"]
+    → selects an input with type="text"
+
+    input[type="password"]
+    → selects an input with type="password"
+
+    querySelector() returns ONLY THE FIRST matching element.
+-->
+
+
+<!--
+19. document.querySelector('p:first-child')
+
+    - querySelector() → DOM method
+    - Uses CSS selector syntax.
+
+    p
+    → selects a <p> element
+
+    :first-child
+    → selects an element that is the FIRST CHILD of its parent.
+
+    Example:
+
+    <div>
+        <p>First paragraph</p>
+        <p>Second paragraph</p>
+    </div>
+
+    document.querySelector('p:first-child')
+
+    → selects:
+    <p>First paragraph</p>
+
+
+    IMPORTANT:
+
+    :first-child does NOT mean:
+    "select the first <p> on the page"
+
+    It means:
+    "select a <p> that is the first child of its parent."
+
+
+    Example:
+
+    <div>
+        <h1>Heading</h1>
+        <p>Paragraph</p>
+    </div>
+
+    document.querySelector('p:first-child')
+
+    → returns null
+
+    Why?
+    Because <p> is NOT the first child.
+    <h1> is the first child.
+
+
+    :first-child
+    → CSS pseudo-class
+
+    querySelector()
+    → returns ONLY THE FIRST matching element.
+-->
+
+
+<!--
+IMPORTANT:
+
+querySelector() uses CSS selector syntax.
+
+"h1"
+→ selects by tag
+
+"#title"
+→ selects by ID
+
+".heading"
+→ selects by class
+
+'input[type="password"]'
+→ selects by tag + attribute
+
+'p:first-child'
+→ selects a <p> that is the first child of its parent
+
+
+querySelector() returns ONLY THE FIRST matching element.
+
+If there are multiple matching elements,
+querySelector() selects only the first one.
+-->
+
+
+<!-- =========================================================
+     QUICK REVISION
+     =========================================================
+
+     document
+     → DOM object
+
+     getElementById()
+     → method
+
+     querySelector()
+     → method used to select an element using a CSS selector
+
+     "title"
+     → ID value / argument
+
+     id
+     → DOM property
+
+     className
+     → DOM property
+
+     getAttribute()
+     → method used to READ an attribute
+
+     setAttribute()
+     → method used to SET / CHANGE an attribute
+
+     class
+     → HTML attribute
+
+     "heading"
+     → value of the class attribute
+
+     style
+     → DOM property used to access/modify inline CSS
+
+     backgroundColor
+     → CSS property accessed through .style
+
+     padding
+     → CSS property accessed through .style
+
+     borderRadius
+     → CSS property accessed through .style
+
+     textContent
+     → DOM property → gets text content
+
+     innerHTML
+     → DOM property → gets HTML + text content
+
+     innerText
+     → DOM property → gets visible text
+
+     querySelector("h1")
+     → selects the first <h1>
+
+     querySelector("#title")
+     → selects the first element with ID "title"
+
+     querySelector(".heading")
+     → selects the first element with class "heading"
+
+     querySelector('input[type="password"]')
+     → selects the first password input
+
+     querySelector('p:first-child')
+     → selects the first matching <p> that is
+       the first child of its parent
+     ========================================================= -->
+
+
+<!-- =========================================================
+     QUICK DIFFERENCE
+     =========================================================
+
+     getElementById("title")
+     → specifically selects by ID
+
+     querySelector("#title")
+     → selects by ID using CSS selector syntax
+
+     querySelector(".heading")
+     → selects by class
+
+     querySelector("h1")
+     → selects by tag
+
+     querySelector('input[type="password"]')
+     → selects by tag + attribute
+
+     querySelector('p:first-child')
+     → selects by tag + pseudo-class
+
+     querySelector()
+     → returns the FIRST matching element
+     ========================================================= -->
