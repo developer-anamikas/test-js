@@ -551,3 +551,605 @@ querySelector() selects only the first one.
      querySelector()
      → returns the FIRST matching element
      ========================================================= -->
+
+     <!-- =========================================================
+     DOM: querySelector() ON A SELECTED ELEMENT
+     ========================================================= -->
+
+
+<!--
+1. document.querySelector('ul')
+
+   - querySelector() → DOM method
+   - 'ul' → CSS tag selector
+   - Selects the FIRST <ul> element in the document.
+
+   Example:
+
+   <ul>
+       <li>One</li>
+       <li>Two</li>
+   </ul>
+
+   document.querySelector('ul')
+
+   → returns the <ul> element
+-->
+
+
+<!--
+2. const myul = document.querySelector('ul')
+
+   - document.querySelector('ul')
+     → finds the first <ul> element
+
+   - const myul
+     → stores that <ul> element in the variable myul
+
+   Now:
+
+   myul
+   → represents the selected <ul> element.
+
+   Instead of writing:
+
+   document.querySelector('ul')
+
+   again and again, we can simply use:
+
+   myul
+-->
+
+
+<!--
+3. myul.querySelector('li')
+
+   - myul → the <ul> element we already selected
+   - querySelector('li') → searches for the FIRST <li>
+     inside that <ul>.
+
+   IMPORTANT:
+
+   querySelector() can be used not only on document,
+   but also on an already-selected element.
+
+   Example:
+
+   <ul>
+       <li>One</li>
+       <li>Two</li>
+   </ul>
+
+   myul.querySelector('li')
+
+   → returns the FIRST <li> inside myul
+-->
+
+
+<!--
+4. const turnGreen = myul.querySelector('li')
+
+   - myul → selected <ul> element
+   - querySelector('li')
+     → finds the FIRST <li> inside myul
+   - const turnGreen
+     → stores that <li> element in a variable
+
+   Now:
+
+   turnGreen
+   → represents the FIRST <li> inside the <ul>.
+-->
+
+
+<!--
+5. turnGreen.style.backgroundColor = "green"
+
+   - turnGreen → selected <li> element
+   - style → DOM property used to access/modify inline CSS
+   - backgroundColor → CSS property
+   - "green" → new CSS value
+
+   This changes the background color of the
+   selected <li> to green.
+
+   CSS equivalent:
+
+   background-color: green;
+-->
+
+
+<!--
+6. turnGreen.style.padding = "10px"
+
+   - turnGreen → selected <li> element
+   - style → DOM property
+   - padding → CSS property
+   - "10px" → new value
+
+   This adds 10px of padding to the selected <li>.
+
+   CSS equivalent:
+
+   padding: 10px;
+-->
+
+
+<!-- =========================================================
+     COMPLETE CODE
+     ========================================================= -->
+
+
+<!--
+document.querySelector('ul')
+
+const myul = document.querySelector('ul')
+
+myul.querySelector('li')
+
+const turnGreen = myul.querySelector('li')
+
+turnGreen.style.backgroundColor = "green"
+turnGreen.style.padding = "10px"
+
+
+FLOW:
+
+document
+   ↓
+querySelector('ul')
+   ↓
+selects the <ul>
+   ↓
+store it in myul
+   ↓
+myul.querySelector('li')
+   ↓
+finds the FIRST <li> inside <ul>
+   ↓
+store it in turnGreen
+   ↓
+change its CSS using .style
+-->
+
+
+<!-- =========================================================
+     IMPORTANT CONCEPT
+     =========================================================
+
+     document.querySelector('ul')
+     → searches the ENTIRE document
+
+     myul.querySelector('li')
+     → searches ONLY INSIDE myul (<ul>)
+
+     So querySelector() can be used on:
+
+     document
+     OR
+     any already-selected DOM element
+
+
+     Example:
+
+     document.querySelector('ul')
+     → find <ul> anywhere in the document
+
+     myul.querySelector('li')
+     → find <li> inside that <ul>
+     ========================================================= -->
+
+
+<!-- =========================================================
+     QUICK REVISION
+     =========================================================
+
+     document.querySelector('ul')
+     → selects the first <ul> in the document
+
+     const myul = document.querySelector('ul')
+     → stores the selected <ul> in myul
+
+     myul.querySelector('li')
+     → selects the first <li> inside myul
+
+     const turnGreen = myul.querySelector('li')
+     → stores that <li> in turnGreen
+
+     turnGreen.style.backgroundColor = "green"
+     → changes its background color to green
+
+     turnGreen.style.padding = "10px"
+     → adds 10px padding
+
+     MAIN IDEA:
+
+     document
+       → parent/search area
+
+     myul
+       → selected <ul>
+
+     myul.querySelector('li')
+       → search for a child inside that <ul>
+     ========================================================= -->
+
+
+     <!-- =========================================================
+     DOM: querySelectorAll()
+     ========================================================= -->
+
+
+<!--
+7. document.querySelectorAll('li')
+
+   - querySelectorAll() → DOM method
+   - Uses CSS selector syntax.
+   - 'li' → selects all <li> elements in the document.
+
+   Example:
+
+   <ul>
+       <li>One</li>
+       <li>Two</li>
+       <li>Three</li>
+   </ul>
+
+   document.querySelectorAll('li')
+
+   → selects ALL three <li> elements.
+
+   IMPORTANT:
+
+   querySelector()
+   → returns ONLY the FIRST matching element
+
+   querySelectorAll()
+   → returns ALL matching elements
+-->
+
+
+<!--
+8. const temp1 = document.querySelectorAll('li')
+
+   - document.querySelectorAll('li')
+     → selects all <li> elements
+
+   - const temp1
+     → stores the collection of selected elements
+
+   Now:
+
+   temp1
+   → contains all the <li> elements.
+-->
+
+
+<!--
+9. temp1.forEach(function(item) {
+       item.style.backgroundColor = "lightblue"
+   })
+
+   - forEach() → used to run a function for EVERY item
+   - item → represents the current <li> element
+   - item.style.backgroundColor
+     → changes the background color of that <li>
+
+   Result:
+
+   Every <li> gets a lightblue background.
+
+   Example:
+
+   <li>One</li>
+   <li>Two</li>
+   <li>Three</li>
+
+   → all three become lightblue.
+-->
+
+
+<!--
+10. temp1.forEach(item => {
+        item.style.backgroundColor = ""
+    })
+
+    - forEach() → runs for every selected <li>
+    - item → current <li>
+    - backgroundColor = ""
+      → removes the inline background-color value.
+
+    IMPORTANT:
+
+    This removes the INLINE style set through JavaScript.
+
+    It does NOT necessarily remove a background color
+    coming from a CSS class or stylesheet.
+-->
+
+
+<!--
+11. temp1[0].style.backgroundColor = "green"
+
+    - temp1 → collection of all selected <li> elements
+    - [0] → accesses the FIRST element
+    - .style.backgroundColor
+      → changes its background color
+
+    Result:
+
+    Only the FIRST <li> becomes green.
+
+
+    Index positions:
+
+    temp1[0] → first <li>
+    temp1[1] → second <li>
+    temp1[2] → third <li>
+
+    IMPORTANT:
+
+    JavaScript uses ZERO-BASED INDEXING.
+
+    So the first element is at index 0.
+-->
+
+
+<!-- =========================================================
+     QUICK DIFFERENCE
+     =========================================================
+
+     querySelector('li')
+     → selects the FIRST matching <li>
+
+     querySelectorAll('li')
+     → selects ALL matching <li> elements
+
+     temp1[0]
+     → first selected element
+
+     temp1[1]
+     → second selected element
+
+     temp1[2]
+     → third selected element
+
+     forEach()
+     → performs an action on EVERY selected element
+
+     Example:
+
+     temp1.forEach(item => {
+         item.style.backgroundColor = "lightblue"
+     })
+
+     → all <li> elements become lightblue
+     ========================================================= -->
+
+
+     <!-- =========================================================
+     ARRAY vs NODELIST vs HTMLCOLLECTION
+     TCS PLACEMENT PREPARATION
+     ========================================================= -->
+
+
+<!--
+IMPORTANT:
+
+For TCS placement preparation, the following level
+of knowledge is ENOUGH for this topic.
+
+There is NO need to go very deep into DOM collection
+edge cases at this stage.
+-->
+
+
+<!--
+1. ARRAY
+
+   - Array is a JavaScript data structure.
+
+   Example:
+
+   const arr = [10, 20, 30]
+
+   Array has methods such as:
+
+   forEach()
+   map()
+   filter()
+   reduce()
+   etc.
+-->
+
+
+<!--
+2. NODELIST
+
+   - NodeList is a collection of DOM nodes.
+   - It is NOT an Array.
+
+   Example:
+
+   const items = document.querySelectorAll('li')
+
+   items
+   → NodeList
+
+   Array.isArray(items)
+   → false
+
+   NodeList supports:
+
+   [index]
+   .length
+   .forEach()
+-->
+
+
+<!--
+3. HTMLCOLLECTION
+
+   - HTMLCollection is a collection of HTML elements.
+   - It is NOT an Array.
+
+   Examples:
+
+   document.getElementsByClassName("box")
+   document.getElementsByTagName("li")
+
+   → return an HTMLCollection.
+
+   HTMLCollection supports:
+
+   [index]
+   .length
+
+   But it does NOT directly have all Array methods.
+-->
+
+
+<!--
+4. querySelectorAll()
+
+   document.querySelectorAll('li')
+
+   → returns a NodeList
+
+   IMPORTANT:
+
+   NodeList ≠ Array
+-->
+
+
+<!--
+5. getElementsByClassName()
+
+   document.getElementsByClassName("box")
+
+   → returns an HTMLCollection
+-->
+
+
+<!--
+6. getElementsByTagName()
+
+   document.getElementsByTagName("li")
+
+   → returns an HTMLCollection
+-->
+
+
+<!--
+7. NODELIST vs HTMLCOLLECTION
+
+   querySelectorAll()
+   → NodeList
+   → usually STATIC
+
+   getElementsByClassName()
+   → HTMLCollection
+   → LIVE
+
+   getElementsByTagName()
+   → HTMLCollection
+   → LIVE
+
+
+   STATIC:
+   → does not automatically update when the DOM changes.
+
+   LIVE:
+   → automatically reflects changes made to the DOM.
+-->
+
+
+<!--
+8. IMPORTANT ARRAY DIFFERENCE
+
+   Array:
+
+   const arr = [1, 2, 3]
+
+   arr.map()
+   arr.filter()
+   arr.reduce()
+   arr.forEach()
+
+   → available on Array.
+
+
+   NodeList:
+
+   const items = document.querySelectorAll('li')
+
+   items.forEach()
+   → available
+
+   But:
+
+   items.map()
+   items.filter()
+   items.reduce()
+
+   → NOT directly available.
+
+
+   Therefore:
+
+   NodeList is NOT an Array.
+-->
+
+
+<!-- =========================================================
+     TCS PLACEMENT LEVEL — ENOUGH TO REMEMBER
+     =========================================================
+
+     1. Array ≠ NodeList ≠ HTMLCollection
+
+     2. querySelectorAll()
+        → returns NodeList
+
+     3. getElementsByClassName()
+        → returns HTMLCollection
+
+     4. getElementsByTagName()
+        → returns HTMLCollection
+
+     5. NodeList and HTMLCollection support:
+        → [index]
+        → .length
+
+     6. NodeList supports:
+        → .forEach()
+
+     7. NodeList and HTMLCollection
+        → are NOT Arrays
+
+     8. querySelectorAll()
+        → usually returns a STATIC NodeList
+
+     9. getElementsByClassName()
+        → returns a LIVE HTMLCollection
+
+     10. getElementsByTagName()
+         → returns a LIVE HTMLCollection
+     ========================================================= -->
+
+
+
+                <!-- CONVERSION OF HTMLCOLLECTION INTO ARRAY -->
+            <!-- // Select elements by class name
+        const tempclass = document.getElementsByClassName('list-item')
+
+        // Convert HTMLCollection into a real array
+        const myConvertedArray = Array.from(tempclass)
+
+        // Check the result
+        console.log(myConvertedArray)
+
+        // Apply style to each element
+        myConvertedArray.forEach(function(li){
+        li.style.color = 'orange'
+        }) -->
+
