@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    height: 50px;
+    width: 100%;
+    background-color: #774242;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+a {
+    background-color: white;
+    padding: 4px 10px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    background-color: rgb(119, 96, 96);
+    color: white;
+    cursor: pointer;
+}
+
+/* Canvas container vertically aligns Heading, Buttons Row, and Text */
+.canvas {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    text-align: center;
+}
+
+/* Row wrapper to display boxes side by side */
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Space between each color box */
+}
+
+/* Base button styles */
+.button {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+/* Individual Colors */
+#grey   { background-color: grey; }
+#white  { background-color: white; }
+#blue   { background-color: blue; }
+#yellow { background-color: yellow; }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    height: 50px;
+    width: 100%;
+    background-color: #774242;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+a {
+    background-color: white;
+    padding: 4px 10px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    background-color: rgb(119, 96, 96);
+    color: white;
+    cursor: pointer;
+}
+
+/* Canvas container vertically aligns Heading, Buttons Row, and Text */
+.canvas {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    text-align: center;
+}
+
+/* Row wrapper to display boxes side by side */
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Space between each color box */
+}
+
+/* Base button styles */
+.button {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+/* Individual Colors */
+#grey   { background-color: grey; }
+#white  { background-color: white; }
+#blue   { background-color: blue; }
+#yellow { background-color: yellow; }
+
+h2 span {
+    display: block;
+    margin-top: 5px;
+}
