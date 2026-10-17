@@ -10,7 +10,7 @@ const randomColor = function () {
 };
 
 // a function reference means you are giving JavaScript the function to use later. A function call means you want JavaScript to execute it now.
-
+// https://chatgpt.com/s/t_6ad3239ba2588191a66688e263e6a75e
 let intervalId;
 
 const startChangingColor = function () {
