@@ -9,5 +9,33 @@ const user = {
     }
 }
 
-console.log(user.username);
-console.log(user.getUserDetails());
+// console.log(user.username);
+// console.log(user.getUserDetails());
+// console.log(this);
+ 
+
+//CONSTRUCTOR FUNCTION CRAETED
+function User(username, loginCount, isLoggedIn){
+    this.username = username;
+    this.loginCount = loginCount;
+    this.isLoggedIn = isLoggedIn
+
+    this.greeting = function(){
+        console.log(`Welcome ${this.username}`);
+
+    }
+
+    return this
+}
+
+const userOne = new User("hitesh", 12, true)
+// const userTwo = new User("ChaiAurCode", 11, false)
+// console.log(userOne.constructor);           //constructor is a property that refers to the function used to create the object.
+
+
+// //The instanceof operator checks whether an object has a particular constructor's prototype in its prototype chain.
+// console.log(userOne instanceof User); // true
+// console.log(userTwo instanceof User); // true
+// console.log(userOne instanceof Array); // false
+
+// console.log(userOne.greeting())
