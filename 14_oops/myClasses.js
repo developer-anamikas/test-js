@@ -1,19 +1,19 @@
-//https://chatgpt.com/s/t_6ae365bf29cc8191a1b0953014d5e2aa
+// //https://chatgpt.com/s/t_6ae365bf29cc8191a1b0953014d5e2aa
 
-class user{
-    constructor(name, age){
-        this.name = name;
-        this.age = age;
-    }
-    encrypt(){
-        return `${this.name}${this.age}`
-    }
+// class user{
+//     constructor(name, age){
+//         this.name = name;
+//         this.age = age;
+//     }
+//     encrypt(){
+//         return `${this.name}${this.age}`
+//     }
 
-}
+// }
 
-const chai = new user("chai", 20);
-console.log(chai)
-console.log(chai.encrypt())
+// const chai = new user("chai", 20);
+// console.log(chai)
+// console.log(chai.encrypt())
 
 // behind the scene
 
