@@ -1,7 +1,11 @@
 const descriptor=Object.getOwnPropertyDescriptor(Math,'PI');        /*Yes, that is exactly correct. In the expression Math.PI, PI is a property of the Math object. */
 
-console.log(descriptor);
+// console.log(descriptor);
+// console.log(descripter);
 
+// console.log(Math.PI);
+// Math.PI = 5
+// console.log(Math.PI);
 
 /* the speaker explains that getOwnPropertyDescriptor is a powerful tool 
 used to inspect the hidden internal properties of an object*/
@@ -30,10 +34,38 @@ Professional Use: Mention that you can use Object.defineProperty to intentionall
 The video highlights three primary flags:
 
 Writable: Determines if the property's value can be changed. If set to false, you cannot modify the value (6:35).
-Enumerable: Controls whether the property appears during loops (like for...in or Object.keys). If false, the property is hidden from these iterations (6:54).
-Configurable: Decides if the property can be deleted or if its other flags can be modified. If false, you are locked out of changing its configuration (6:57). */
+Enumerable: Controls whether the property appears during loops (like for...in or Object.keys). If false, the property is hidden from these iterations .
+Configurable: Decides if the property can be deleted or if its other flags can be modified. If false, you are locked out of changing its configuration . */
 
 /*Think of a property as the "data" (e.g., name: 'Ginger Tea') and the flags as the "rules" or "metadata" that control that data */
 
 const obj1 = Object.create(null);             //In JavaScript, Object.create(null) creates an object that has no prototype
 
+const chai = {
+    name: 'ginger chai',
+    price: 250,
+    isAvailable: true,
+
+    orderChai: function(){
+        console.log("chai nhi bni");
+    }
+}
+
+console.log(Object.getOwnPropertyDescriptor(chai, "name"));
+
+
+//I want to make the name property non-writable, so that it cannot be changed. I can do this using Object.defineProperty:
+Object.defineProperty(chai, 'name', {
+    //writable: false,
+    enumerable: false, //This means that the name property will not show up in for...in loops or Object.keys() calls.
+    
+})
+
+//Objs are usually not iterable, but we can use Object.entries to iterate over the properties of an object. Object.entries returns an array of a given object's own enumerable string-keyed property [key, value] pairs.
+//https://chatgpt.com/s/t_6ae59ae68f248191aff960351386c2c7
+for (let [key, value] of Object.entries(chai)) {
+    if (typeof value !== 'function') {
+        
+        console.log(`${key} : ${value}`);
+    }
+}
