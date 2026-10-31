@@ -1,3 +1,6 @@
+//https://chatgpt.com/s/t_6ae5e055eedc819182373c37db5ea25e
+
+
 // // let myName = "hitesh     "
 // // let mychannel = "chai     "
 
@@ -71,7 +74,7 @@
 
 let anotherUsername = "ChaiAurCode     "
 
-anotherUsername.prototype.trueLength = function(){
+String.prototype.trueLength = function(){
     console.log(`${this}`);
     console.log(`True length is: ${this.trim().length}`);
 }

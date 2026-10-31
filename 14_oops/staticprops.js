@@ -14,7 +14,7 @@ class User {
 
 const hitesh = new User("hitesh");
 // console.log(hitesh.createId()); 
-console.log(User.createId()); //123
+console.log(User.createId()); //static sticked to class work only cant be accessed by object.
 
 
 class Teacher extends User {
