@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+
+    //Lexical scoping
+//     //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures
+//     function outer(){
+//     let username = "hitesh"
+//     // console.log("OUTER", secret);
+//     function inner(){
+//         let secret = "my123"
+//         console.log("inner", username);
+//     }
+//     function innerTwo(){
+//         console.log("innerTwo", username);
+//         // console.log(secret);
+//     }
+//     inner()
+//     innerTwo()
+// }
+// outer()
+
+    //Closure
+    function makeFunc() {
+    const name = "Mozilla";
+    function displayName() {
+        console.log(name);
+    }
+    return displayName;
+    }
+
+    const myFunc = makeFunc();
+    myFunc()
+
+    //closure -> returns not only the functionbut also the leical scope relateed to that function.
+
+    //IT RETURNS THE LEXICAL SCOPE OF THE DISPLAYNAME FUNCTION.
+
+    /*You are absolutely right, and that is exactly the point the teacher is making! The fact that you see "Mozilla" printed in the console is the **proof that a closure is working**.
+
+Here is why the teacher raises that concern:
+
+1.  **The Theoretical Concern (15:39 - 15:53):** In standard JavaScript execution, once `makeFunc()` finishes, its **Execution Context** is popped off the call stack and destroyed. Normally, any local variables inside it (like `name`) should vanish forever. The teacher asks: *"If the outer scope is destroyed, how can the inner function still reach it?"*
+
+2.  **The "Closure" Solution (16:03 - 16:21):** The code works because of **Closures**. When `makeFunc()` returns the `displayName` function, it doesn't just return the code of displayName only but also it returns the outer function scope if connected , IT RETURNS THE LEXICAL SCOPE OF THE DISPLAYNAME FUNCTION.n; it bundles the function together with its **lexical environment** (the memory reference to the scope where it was created).
+
+3.  **The Result:** Even though the *Execution Context* of `makeFunc()` is gone, the *Lexical Environment* containing the variable `name` is kept alive in memory because the inner function still holds a reference to it.
+
+So, your observation is spot on: the function works fine because the closure ensures the "parent" data persists, even though the parent function is technically off the stack! */
+
+</script>
+ <script>
+    function clickHandler(color){
+    document.body.style.backgroundColor = `${color}`
+
+        // return function(){
+        //     document.body.style.backgroundColor = `${color}`
+        // }
+    }
+
+    document.getElementById('orange').onclick = clickHandler
+    ("orange")
+    document.getElementById('green').onclick = clickHandler
+    ("green")
+
+    //https://chatgpt.com/s/t_6ae62126eb4081918dfb4a8d36396df4
+    //https://chatgpt.com/s/t_6ae62126eb4081918dfb4a8d36396df4
+
+ </script>
+</html>
