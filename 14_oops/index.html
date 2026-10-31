@@ -1,0 +1,49 @@
+/* ## Understanding 'this' and `.bind(this)` in JavaScript Event Handlers (7:02-10:20)
+
+*   **The Context Shift Issue**:
+
+    *   When you define a method (like `handleClick`) inside a class, `this` refers to the **class instance**, allowing you to access properties like `this.server`.
+    *   When you pass that method as a callback to an `addEventListener`, the execution context changes.
+    *   When the browser triggers the event, it sets `this` to point to the **HTML element** (the button) that was clicked, rather than your class instance.
+
+*   **Why `this.server` becomes `undefined`**:
+
+    *   Because `this` now refers to the button element, JavaScript looks for the `server` property on that button.
+    *   Since the button does not have a `server` property, it returns `undefined`.
+
+*   **The Solution: `.bind(this)`**:
+
+    *   Using `.bind(this)` (9:31) creates a new version of the function where `this` is **permanently locked** to the original class instance.
+    *   This ensures that no matter what triggers the function, `this` always points back to your class, keeping your data (like `this.server`) accessible. */
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React {
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this))
+
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);
+        }
+    }
+
+    const app = new React()
+</script>
+</html>
